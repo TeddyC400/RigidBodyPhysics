@@ -14,8 +14,8 @@ repositories {
 dependencies {
     testImplementation(platform("org.junit:junit-bom:5.9.1"))
     testImplementation("org.junit.jupiter:junit-jupiter")
-    implementation("com.github.Minestom:Minestom:f1d5940855")
-    implementation("com.github.stephengold:Libbulletjme:20.2.0")
+    implementation("com.github.Minestom:Minestom:d0754f2a15")
+    implementation("com.github.stephengold:Libbulletjme:21.2.1")
 }
 
 tasks.test {
