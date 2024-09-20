@@ -7,7 +7,7 @@ import org.jetbrains.annotations.NotNull;
 
 /**
  * Called when the rigid body is still in contact with the other rigid body.
- * This will be called repeatedly  until there is no more contact between the two objects.
+ * This will be called repeatedly until there is no more contact between the two objects.
  */
 public class ContactOngoingEvent implements RigidBodyEvent, CancellableEvent {
 

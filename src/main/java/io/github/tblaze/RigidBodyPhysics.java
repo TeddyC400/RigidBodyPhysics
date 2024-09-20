@@ -21,11 +21,11 @@ public class RigidBodyPhysics {
 
     /**
      * Initializes the bulletJME library to make the custom physics functional.
-     * <br>
+     * <br><br>
      * To get the bulletJME native file, go to
      * <a href="https://github.com/stephengold/Libbulletjme/tags">bulletJME's GitHub download page</a>
      * and install one of the files under assets (Linux: .so, Windows: .dll, MacOS: .dylib). If you get the wrong version
-     * of the file, there will be a run-time error to show which version is compatiable.
+     * of the file, there will be a run-time error to show which version is compatible.
      *
      * @param bulletJMENativeFile
      * @throws FileNotFoundException
@@ -35,11 +35,6 @@ public class RigidBodyPhysics {
         if (!success) {
             throw new FileNotFoundException("The native file to load Bullet JME does not exist.");
         }
-
-        // TODO: Is this piece of BoundingBox code necessary?
-        // https://github.com/emortaldev/BlockPhysics/blob/4ee60e757d2bf433a86bd19cc53c8e787da39c08/src/main/java/dev/emortal/Main.java#L83
-
-
     }
 
     /**
@@ -50,7 +45,7 @@ public class RigidBodyPhysics {
      * @param listenToContactEnded If true, {@link ContactEndedEvent} will be called
      * @param listenToContactOngoing If true, {@link ContactOngoingEvent} will be called
      * @param listenToContactStarted If true, {@link ContactStartedEvent} will be called
-     * @return
+     * @return MinecraftPhysicsHandler object
      */
     public static MinecraftPhysicsHandler createPhysics(Instance instance, boolean listenToContactEnded, boolean listenToContactOngoing, boolean listenToContactStarted) {
         var physicsHandler = new MinecraftPhysicsHandler(instance, listenToContactEnded, listenToContactOngoing, listenToContactStarted);
@@ -60,7 +55,7 @@ public class RigidBodyPhysics {
     }
 
     /**
-     * Removes the custom physics from the instance
+     * Removes the custom physics from the instance.
      *
      * @param instance
      */
@@ -68,15 +63,21 @@ public class RigidBodyPhysics {
         INSTANCE_PHYSICS_MAP.remove(instance);
     }
 
+    /**
+     * Gets the {@link MinecraftPhysicsHandler} object from the specified {@link Instance}.
+     *
+     * @param instance
+     * @return MinecraftPhysicsHandler object
+     */
     public static MinecraftPhysicsHandler getPhysicsHandler(Instance instance) {
         return INSTANCE_PHYSICS_MAP.get(instance);
     }
 
     /**
-     * Returns true if there is custom physics in the instance
+     * Returns true if there is custom physics in the instance.
      *
      * @param instance
-     * @return
+     * @return True if the instance does have physics active.
      */
     public static boolean hasPhysics(Instance instance) {
         return INSTANCE_PHYSICS_MAP.containsKey(instance);
