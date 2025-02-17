@@ -1,6 +1,6 @@
 plugins {
     id("java")
-    id("com.github.johnrengelman.shadow") version "8.1.1"
+    id("com.gradleup.shadow") version "8.3.0"
 }
 
 group = "io.github.tblaze"
@@ -8,16 +8,27 @@ version = "1.0"
 
 repositories {
     mavenCentral()
-    maven(url = "https://jitpack.io")
 }
 
 dependencies {
     testImplementation(platform("org.junit:junit-bom:5.9.1"))
     testImplementation("org.junit.jupiter:junit-jupiter")
-    implementation("com.github.Minestom:Minestom:d0754f2a15")
+    implementation("net.minestom:minestom-snapshots:620ebe5d6b")
     implementation("com.github.stephengold:Libbulletjme:21.2.1")
 }
 
-tasks.test {
-    useJUnitPlatform()
+java {
+    toolchain {
+        languageVersion.set(JavaLanguageVersion.of(21)) // Minestom has a minimum Java version of 21
+    }
+}
+
+tasks {
+    build {
+        dependsOn(shadowJar)
+    }
+    shadowJar {
+        mergeServiceFiles()
+        archiveClassifier.set("") // Prevent the -all suffix on the shadowjar file.
+    }
 }
