@@ -1,4 +1,4 @@
-package io.github.tblaze.math;
+package io.github.rigidbodyphysics.math;
 
 import com.jme3.math.Quaternion;
 import com.jme3.math.Vector3f;

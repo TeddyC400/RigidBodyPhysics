@@ -1,12 +1,12 @@
-package io.github.tblaze;
+package io.github.rigidbodyphysics;
 
 import com.jme3.bullet.PhysicsSpace;
 import com.jme3.bullet.collision.PersistentManifolds;
 import com.jme3.bullet.collision.PhysicsCollisionObject;
-import io.github.tblaze.entity.PhysicsObject;
-import io.github.tblaze.event.ContactEndedEvent;
-import io.github.tblaze.event.ContactOngoingEvent;
-import io.github.tblaze.event.ContactStartedEvent;
+import io.github.rigidbodyphysics.entity.PhysicsObject;
+import io.github.rigidbodyphysics.event.ContactEndedEvent;
+import io.github.rigidbodyphysics.event.ContactOngoingEvent;
+import io.github.rigidbodyphysics.event.ContactStartedEvent;
 import net.minestom.server.coordinate.Point;
 import net.minestom.server.entity.Entity;
 import net.minestom.server.event.EventDispatcher;

@@ -1,9 +1,9 @@
-package io.github.tblaze;
+package io.github.rigidbodyphysics;
 
 import com.jme3.system.NativeLibraryLoader;
-import io.github.tblaze.event.ContactEndedEvent;
-import io.github.tblaze.event.ContactOngoingEvent;
-import io.github.tblaze.event.ContactStartedEvent;
+import io.github.rigidbodyphysics.event.ContactEndedEvent;
+import io.github.rigidbodyphysics.event.ContactOngoingEvent;
+import io.github.rigidbodyphysics.event.ContactStartedEvent;
 import net.minestom.server.instance.Instance;
 
 import java.io.File;

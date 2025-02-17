@@ -1,7 +1,7 @@
-package io.github.tblaze.event;
+package io.github.rigidbodyphysics.event;
 
-import io.github.tblaze.MinecraftPhysicsHandler;
-import io.github.tblaze.entity.PhysicsObject;
+import io.github.rigidbodyphysics.MinecraftPhysicsHandler;
+import io.github.rigidbodyphysics.entity.PhysicsObject;
 import net.minestom.server.event.Event;
 import org.jetbrains.annotations.NotNull;
 

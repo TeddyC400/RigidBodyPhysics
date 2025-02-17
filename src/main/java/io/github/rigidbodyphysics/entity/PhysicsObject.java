@@ -1,4 +1,4 @@
-package io.github.tblaze.entity;
+package io.github.rigidbodyphysics.entity;
 
 import com.jme3.bullet.objects.PhysicsRigidBody;
 import net.minestom.server.coordinate.Point;
@@ -18,7 +18,7 @@ public interface PhysicsObject {
     void spawn(Instance instance, Point point);
 
     /**
-     * Updates the object continuously on the tick scheduler from {@link io.github.tblaze.MinecraftPhysicsHandler}.
+     * Updates the object continuously on the tick scheduler from {@link io.github.rigidbodyphysics.MinecraftPhysicsHandler}.
      *
      * @param delta
      */

@@ -1,4 +1,4 @@
-package io.github.tblaze.entity;
+package io.github.rigidbodyphysics.entity;
 
 import net.minestom.server.entity.Entity;
 import net.minestom.server.entity.metadata.display.ItemDisplayMeta;

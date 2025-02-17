@@ -1,14 +1,15 @@
-package io.github.tblaze.event;
+package io.github.rigidbodyphysics.event;
 
-import io.github.tblaze.MinecraftPhysicsHandler;
-import io.github.tblaze.entity.PhysicsObject;
+import io.github.rigidbodyphysics.MinecraftPhysicsHandler;
+import io.github.rigidbodyphysics.entity.PhysicsObject;
 import net.minestom.server.event.trait.CancellableEvent;
 import org.jetbrains.annotations.NotNull;
 
 /**
- * Called when rigid body no longer makes contact with another rigid body.
+ * Called when the rigid body is still in contact with the other rigid body.
+ * This will be called repeatedly until there is no more contact between the two objects.
  */
-public class ContactEndedEvent implements RigidBodyEvent, CancellableEvent {
+public class ContactOngoingEvent implements RigidBodyEvent, CancellableEvent {
 
     private final MinecraftPhysicsHandler physicsHandler;
     private final PhysicsObject physicsObjectA;
@@ -16,8 +17,8 @@ public class ContactEndedEvent implements RigidBodyEvent, CancellableEvent {
 
     private boolean cancelled;
 
-    public ContactEndedEvent(@NotNull MinecraftPhysicsHandler physicsHandler,
-                             @NotNull PhysicsObject physicsObjectA, @NotNull PhysicsObject physicsObjectB) {
+    public ContactOngoingEvent(@NotNull MinecraftPhysicsHandler physicsHandler,
+                               @NotNull PhysicsObject physicsObjectA, @NotNull PhysicsObject physicsObjectB) {
         this.physicsHandler = physicsHandler;
         this.physicsObjectA = physicsObjectA;
         this.physicsObjectB = physicsObjectB;
