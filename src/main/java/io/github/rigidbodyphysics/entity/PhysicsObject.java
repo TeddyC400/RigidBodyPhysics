@@ -1,13 +1,13 @@
 package io.github.rigidbodyphysics.entity;
 
-import com.jme3.bullet.objects.PhysicsRigidBody;
+import com.jme3.bullet.objects.PhysicsBody;
 import net.minestom.server.coordinate.Point;
 import net.minestom.server.instance.Instance;
 
 /**
  * An object with physics attached to it.
  */
-public interface PhysicsObject {
+public interface PhysicsObject<T extends PhysicsBody> {
 
     /**
      * Spawns the object at the specified point.
@@ -30,8 +30,8 @@ public interface PhysicsObject {
     void destroy();
 
     /**
-     * @return PhysicsRigidBody object
+     * @return PhysicsBody object
      */
-    PhysicsRigidBody getRigidBody();
+    T getPhysicsBody();
 
 }

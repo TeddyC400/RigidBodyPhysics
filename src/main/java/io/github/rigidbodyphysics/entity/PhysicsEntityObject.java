@@ -1,5 +1,6 @@
 package io.github.rigidbodyphysics.entity;
 
+import com.jme3.bullet.objects.PhysicsBody;
 import net.minestom.server.entity.Entity;
 import net.minestom.server.entity.metadata.display.ItemDisplayMeta;
 
@@ -11,7 +12,7 @@ import net.minestom.server.entity.metadata.display.ItemDisplayMeta;
  * point being at the corner instead of the center, causing
  * the physics to look visually unappealing.
  */
-public interface PhysicsEntityObject extends PhysicsObject {
+public interface PhysicsEntityObject<T extends PhysicsBody> extends PhysicsObject<T> {
 
     /**
      * @return Entity object

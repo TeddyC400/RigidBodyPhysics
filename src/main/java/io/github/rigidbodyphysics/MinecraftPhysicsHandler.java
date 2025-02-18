@@ -155,7 +155,7 @@ public class MinecraftPhysicsHandler {
      */
     public void addToInstance(Point point, PhysicsObject physicsObject) {
         POINT_MAP.put(point, physicsObject);
-        COLLISION_MAP.put(physicsObject.getRigidBody(), physicsObject);
+        COLLISION_MAP.put(physicsObject.getPhysicsBody(), physicsObject);
     }
 
     /**
@@ -166,7 +166,7 @@ public class MinecraftPhysicsHandler {
      */
     public void addToInstance(Entity entity, PhysicsObject physicsObject) {
         ENTITY_MAP.put(entity, physicsObject);
-        COLLISION_MAP.put(physicsObject.getRigidBody(), physicsObject);
+        COLLISION_MAP.put(physicsObject.getPhysicsBody(), physicsObject);
     }
 
     /**
@@ -178,7 +178,7 @@ public class MinecraftPhysicsHandler {
         if (POINT_MAP.containsKey(point)) {
             PhysicsObject physicsObject = POINT_MAP.get(point);
             POINT_MAP.remove(point);
-            COLLISION_MAP.remove(physicsObject.getRigidBody());
+            COLLISION_MAP.remove(physicsObject.getPhysicsBody());
         }
     }
 
@@ -191,7 +191,7 @@ public class MinecraftPhysicsHandler {
         if (ENTITY_MAP.containsKey(entity)) {
             PhysicsObject physicsObject = ENTITY_MAP.get(entity);
             ENTITY_MAP.remove(entity);
-            COLLISION_MAP.remove(physicsObject.getRigidBody());
+            COLLISION_MAP.remove(physicsObject.getPhysicsBody());
         }
     }
 
